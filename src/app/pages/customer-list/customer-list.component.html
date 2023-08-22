@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+
+<!--Create and UI design--------------------------------------------------->
+<head>
+  <meta charset="utf-8">
+  <!-- <meta charset="utf-2"> -->
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      /* Remove/borders collapse into a single border-------- */
+    }
+  </style>
+</head>
+<body>
+
+<!--<p>customer-list works!</p>-->
+<h2 style="color: skyblue;">Customer Details</h2>
+
+<!--Add New Customer details--------------------------->
+<div class="row m-2">
+  <div class="m-2">
+    <button class="btn btn-success" routerLink="/new" title="Register New Client">Register New Client</button>
+  </div>
+
+<!--Searching button for customer using firstname----------------------------------->
+<div class="d-flex">
+  <input class="form-control m-2" style="background-color:darkgrey; border: 2px solid tomato;" [(ngModel)]="searchValue" placeholder="Type first name to search">
+  <button class="btn btn-success m-2" (click)="searchByFirstName()">Search</button>
+</div>
+
+<!--Creating table fields----------------------------------------------------->
+  <table class="table table-striped table-bordered table hover m-2" style="border: 2px solid orchid;width: 100%">
+    <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Address</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>Phone Number</th>
+      <th>Email Address</th>
+      <!-- <th>Travelers</th>
+      <th>Class</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Departure Date</th>
+      <th>Departure Time</th>
+      <th>Airline</th>
+      <th>Flight Number</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Tax</th>
+      <th>Total Cost</th>
+      <th>Purchase Date</th> -->
+      <th>Status</th>
+      <th>Active</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customerList">
+      <td>{{customer.customerID}}</td>
+      <td>{{customer.firstName}}</td>
+      <td>{{customer.lastName}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.gender}}</td>
+      <td>{{customer.dob}}</td>
+      <td>{{customer.phone}}</td>
+      <td>{{customer.email}}</td>
+      <!-- <td>{{customer.travelers}}</td>
+      <td>{{customer.statusClass}}</td>
+      <td>{{customer.ticketList[0].flyingFrom}}</td>
+      <td>{{customer.flyingFrom}}</td>
+      <td>{{customer.flyingTo}}</td>
+      <td>{{customer.departureDate}}</td>
+      <td>{{customer.departureTime}}</td>
+      <td>{{customer.airline}}</td>
+      <td>{{customer.flightNumber}}</td>
+      <td>{{customer.ticketPrice}}</td>
+      <td>{{customer.couponDiscount}}</td>
+      <td>{{customer.tax}}</td>
+      <td>{{customer.finalCost}}</td>
+      <td>{{customer.purchaseDate}}</td> -->
+      <td>{{customer.status}}</td>
+      <td>{{customer.active}}</td>
+      <td>
+        <button class="btn btn-outline-warning" style="border: 2px solid violet;"[routerLink]="['/update/',customer.customerID]">Edit</button>
+        <button class="btn btn-outline-danger" style="border: 2px solid red;" (dblclick)="deleteCustomer(customer.customerID)">Delete</button>
+        <button class="btn btn-outline-info" style="border: 2px solid green;" (click)="['/home/view']">View</button> <!--Upadate TicketID-->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <button class="btn btn-success m-2" routerLink="">Sign Out</button>
+    <!----when click on sign out to go login page------------------>
+  </div>
+  </div>
