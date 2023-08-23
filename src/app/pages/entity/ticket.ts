@@ -18,5 +18,4 @@ export class Ticket {
   tax?: string;
   finalCost?: string
   purchaseDate?: string;
-
 }
