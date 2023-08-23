@@ -24,7 +24,7 @@ export class CustomerService {
 
   //Save customer data--------------------------------------------------------------------------
   saveCustomer(customer: Customer): Observable<any>{
-    //@ts-ignore--reomve errors
+    //@ts-ignore--remove errors
       return this.http.post<any>(this.url, customer, {responseType:'text'})
     }
 
