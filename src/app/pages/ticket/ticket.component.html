@@ -1,6 +1,3 @@
-<p>ticket works!</p>
-
-
 <head>
     <meta charset="utf-8">
     <!-- <meta charset="utf-2"> -->
@@ -39,10 +36,10 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let ticket of ticketList"></tr>
+    <tr *ngFor="let ticket of ticketList">
       <td>{{ticket.ticketID}}</td>
       <td>{{ticket.travelers}}</td>
-      <td>{{ticket.class}}</td>
+      <td>{{ticket.statusClass}}</td>
       <td>{{ticket.flyingFrom}}</td>
       <td>{{ticket.flyingTo}}</td>
       <td>{{ticket.departureDate}}</td>
@@ -55,8 +52,16 @@
       <td>{{ticket.finalCost}}</td>
       <td>{{ticket.purchaseDate}}</td>
       <td>
-        <button class="btn btn-outline-success" style="border: 2px solid white;" >Email</button>
-        <button class="btn btn-outline-success" style="border: 2px solid white;"[routerLink]="">Print</button>
+        <button class="btn btn-outline-success" style="border: 2px solid green;" >Email</button>
+        <button class="btn btn-outline-success" style="border: 2px solid green;"[routerLink]="">Print</button>
       </td>
+      </tr>
 </tbody>
-  </table>
+</table>
+
+<div>
+  <br>
+  <!-- <strong>←HomePage</strong> -->
+  <p>HomePage</p>
+  <button class="btn btn-outline-warning m-2" style="border: 2px solid green;" type="click" routerLink='homepage'>Back-HomePage</button>
+</div>

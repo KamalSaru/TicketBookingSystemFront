@@ -25,7 +25,7 @@
       <div class="form-group">
         <!-- For invisible---input-- type="password"---------------------------------- -->
         <label for="pinCode"><span style="color:red;">*</span>PinCode:</label>
-        <input type="password" class="form-control" adminID="pinCode" formControlName="pinCode" placeholder="Enter valid pinCode...">
+        <input type="password" class="form-control" adminID="pinCode" formControlName="pinCode" placeholder="Enter valid pincode...">
         <div *ngIf="adminLoginForm.get('pinCode')?.errors?.['required'] && adminLoginForm.get('pinCode')?.touched" class="err">
           Please enter valid pincode!!
           <div *ngIf="adminLoginForm.get('pinCode')?.errors?.['minlength'] && adminLoginForm.get('pinCode')?.touched" class="err">

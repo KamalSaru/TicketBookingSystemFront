@@ -1,3 +1,4 @@
+import { Ticket } from "./ticket";
 
 export class Customer {
   static ID(ID: any) {
@@ -15,18 +16,5 @@ export class Customer {
   email? : string;
   active? : string;
   status? :string;
-  //ticketID?: string;
-  travelers?: string;
-  statusClass?: string;
-  flyingFrom?: string;
-  flyingTo?: string;
-  departureDate?: string;
-  departureTime?: string;
-  airline?: string;
-  flightNumber?: string;
-  ticketPrice?: string;
-  couponDiscount?: string;
-  tax?: string;
-  finalCost?: string
-  purchaseDate?: string;
+  ticketList?: Ticket[];
 }

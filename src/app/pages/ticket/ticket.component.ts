@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Ticket } from '../entity/ticket';
 import { TicketService } from '../service/ticket.service';
+import { Customer } from '../entity/customer';
 
 @Component({
   selector: 'app-ticket',
@@ -24,11 +25,15 @@ export class TicketComponent implements OnInit, OnDestroy {
   }
   //----------------------------------------------------------------------
 
+  //Get all the ticket details---------------------------------------------
   getAllTicket():void{
     //@ts-ignore
-    this.ticketService.getAllTicket().subscribe((ticket: any) => {
-      this.ticketList=ticket;
-      console.log(this.ticketList);
+    this.ticketService.getAllTicket().subscribe((ticket: Customer[]) => {
+      ticket.forEach((customer : Customer) => {
+        customer.ticketList?.forEach((ticket: Ticket) =>{
+          this.ticketList.push(ticket);
+        })
+      });
     })
   }
 

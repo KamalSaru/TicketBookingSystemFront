@@ -47,19 +47,6 @@
       <th>DOB</th>
       <th>Phone Number</th>
       <th>Email Address</th>
-      <!-- <th>Travelers</th>
-      <th>Class</th>
-      <th>From</th>
-      <th>To</th>
-      <th>Departure Date</th>
-      <th>Departure Time</th>
-      <th>Airline</th>
-      <th>Flight Number</th>
-      <th>Price</th>
-      <th>Discount</th>
-      <th>Tax</th>
-      <th>Total Cost</th>
-      <th>Purchase Date</th> -->
       <th>Status</th>
       <th>Active</th>
       <th>Action</th>
@@ -75,26 +62,12 @@
       <td>{{customer.dob}}</td>
       <td>{{customer.phone}}</td>
       <td>{{customer.email}}</td>
-      <!-- <td>{{customer.travelers}}</td>
-      <td>{{customer.statusClass}}</td>
-      <td>{{customer.ticketList[0].flyingFrom}}</td>
-      <td>{{customer.flyingFrom}}</td>
-      <td>{{customer.flyingTo}}</td>
-      <td>{{customer.departureDate}}</td>
-      <td>{{customer.departureTime}}</td>
-      <td>{{customer.airline}}</td>
-      <td>{{customer.flightNumber}}</td>
-      <td>{{customer.ticketPrice}}</td>
-      <td>{{customer.couponDiscount}}</td>
-      <td>{{customer.tax}}</td>
-      <td>{{customer.finalCost}}</td>
-      <td>{{customer.purchaseDate}}</td> -->
       <td>{{customer.status}}</td>
       <td>{{customer.active}}</td>
       <td>
-        <button class="btn btn-outline-warning" style="border: 2px solid violet;"[routerLink]="['/update/',customer.customerID]">Edit</button>
+        <button class="btn btn-outline-warning" style="border: 2px solid violet;" [routerLink]="['/update/',customer.customerID]">Edit</button>
         <button class="btn btn-outline-danger" style="border: 2px solid red;" title="Make sure before delete!!!" (dblclick)="deleteCustomer(customer.customerID)">Delete</button><!-- Double click for delete -->
-        <button class="btn btn-outline-info" style="border: 2px solid green;" (click)="['/home/view']">View</button> <!--Upadate TicketID-->
+        <button class="btn btn-outline-info" style="border: 2px solid green;" [routerLink]="['/view']">View</button> <!--view ticket details-->
       </td>
     </tr>
     </tbody>

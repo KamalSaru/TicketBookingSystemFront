@@ -13,10 +13,9 @@ const routes: Routes = [
   //app routing to link to open the pages-----------------
   {path: '', component:AdminLoginComponent}, //Admin login-------------
   {path: 'adminRegister',component:AdminRegisterComponent}, //Admin login register------------------------
-  {path: 'home', component:CustomerListComponent},  //Open homepage-------------
+  {path: 'homepage', component:CustomerListComponent},  //Open homepage-------------
   {path: 'view', component:TicketComponent},  //Open/view ticket details-------------------
   {path: 'new', component:NewCustomerComponent},   //Go to new customers--------------
-  {path: 'home/view', component:TicketComponent},//view ticket details
   {path:'update/:customerID', component:NewCustomerComponent} //edit and update customer------------------
 
 ];
